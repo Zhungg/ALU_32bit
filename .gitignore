@@ -49,3 +49,5 @@ equivalence_checking/reports/
 core.*
 .DS_Store
 Thumbs.db
+.lec_*.do
+build/
