@@ -6,7 +6,6 @@
 # Defaults match the lab server this project was built on. Every path can be
 # overridden from the environment on another site, e.g.
 #     PDK_ROOT=/opt/pdk LAB_DB=/opt/lab_db source flow_config.sh
-# Verify the result with env_check/check_paths.sh
 #=============================================================================
 
 # ---- 1. Cadence/Mentor tools: source the site setup only if not done yet ----
