@@ -17,6 +17,7 @@ All notable changes are documented here. Format based on
   `equivalence_checking/reports/`, `simulation/xrun_rtl.log`, `physical_design/signoff/`
   (host paths redacted). Added `physical_design/README.md` and the recorded
   `innovus_session_history.tcl`.
+- Removed checksum files (`*.sha256`).
 - Removed duplicate DFT netlist/SDF/SCANDEF/SDC from `synthesis/outputs/`
   (canonical copy: `synthesis/dft_run/outputs/`).
 - `.gitignore`: also block `*.gds`, `*.gds.gz`, `*.oas` (embed PDK cell geometry).

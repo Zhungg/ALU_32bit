@@ -14,8 +14,8 @@ on gpdk045 / gsclib045, targeting the two modes defined in `scripts/mmmc.tcl`
 | `scripts/innovus_session_history.tcl` | **Recorded command history** of the full Innovus session (see below). |
 | `scripts/rail_analysis/*.pp` | Power-pin files for VDD / VSS rail analysis. |
 | `config/streamOut_*.map` | Layer maps for GDS stream-out and for Assura LVS. |
-| `results/alu_top_postroute_drc_lvs{,_pg}.v` | Final post-route netlists (plain, and with PG pins for LVS). `.sha256` is the checksum of the PG netlist (`sha256sum -c`). |
-| `signoff/` | Curated signoff evidence (DRC, connectivity, placement check, antenna, power, setup/hold summaries, manifest). |
+| `results/alu_top_postroute_drc_lvs{,_pg}.v` | Final post-route netlists (plain, and with PG pins for LVS). |
+| `signoff/` | Curated signoff evidence (DRC, connectivity, placement check, antenna, power, setup/hold summaries). |
 
 ## Session history
 
