@@ -180,7 +180,6 @@ Place & route in Innovus, followed by physical verification.
 ├── synthesis/               Genus synthesis + DFT scripts, ATPG hand-off, netlists, SDF
 ├── equivalence_checking/    Conformal LEC scripts (RTL vs. scan netlist)
 ├── physical_design/         Innovus scripts, layer maps, post-route netlists
-├── env_check/               Tool / PDK path checker
 ├── docs/                    Architecture notes
 ├── img/                     Flow screenshots used in this README
 ├── flow_config.sh           Single source of truth for tool and PDK paths
@@ -216,9 +215,8 @@ used: Genus 20.10, Innovus 20.10, Xcelium 20.09), the GPDK045 / gsclib045 PDK, a
 Linux host.
 
 ```bash
-# 1. Configure paths (override any variable in the environment) and verify them
+# 1. Configure tool / PDK paths (override any variable in the environment)
 source flow_config.sh
-./env_check/check_paths.sh
 
 # 2. RTL simulation and coverage (Xcelium / IMC)
 cd simulation && ./run_rtl.sh && ./run_cov.sh && cd ..
