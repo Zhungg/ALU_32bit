@@ -1,6 +1,6 @@
 set log file reports/alu32_dft_lec_debug.log -replace
 
-read library /home/icer/LAB/RTLtoGDSII/counter_design_database_45nm/lib/slow_vdd1v0_basiccells.v -verilog -both
+read library @SIM_LIB_FUNC@ -verilog -both
 
 read design ../rtl/alu_core.v ../rtl/alu_top.v -verilog -golden
 

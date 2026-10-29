@@ -3,8 +3,10 @@
 # flow_config.sh - single place for every tool / PDK path of the project.
 # Usage (from ANY stage directory):    source ../flow_config.sh
 #
-# All paths come from ENV_REPORT.md (survey of host "infect", 2026-10-24).
-# If something moves, change it HERE only. Verify with env_check/check_paths.sh
+# Defaults match the lab server this project was built on. Every path can be
+# overridden from the environment on another site, e.g.
+#     PDK_ROOT=/opt/pdk LAB_DB=/opt/lab_db source flow_config.sh
+# Verify the result with env_check/check_paths.sh
 #=============================================================================
 
 # ---- 1. Cadence/Mentor tools: source the site setup only if not done yet ----
@@ -17,7 +19,7 @@ fi
 export PROJ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # ---- 3. gpdk045 / gsclib045 (master copy in /eda/PDK) ----
-export PDK_ROOT=/eda/PDK
+export PDK_ROOT=${PDK_ROOT:-/eda/PDK}
 export GPDK=$PDK_ROOT/gpdk045_v_6_0
 export GSCLIB=$PDK_ROOT/gsclib045_all_v4.8/gsclib045        # SVT standard cells
 
@@ -41,7 +43,7 @@ export STD_GDS=$GSCLIB/gds/gsclib045.gds
 export STD_CDL=$GSCLIB/cdl/gsclib045.cdl
 
 # ---- 4. Lab database (reference flow + simulation models) ----
-export LAB_DB=/home/icer/LAB/RTLtoGDSII/counter_design_database_45nm
+export LAB_DB=${LAB_DB:-/home/icer/LAB/RTLtoGDSII/counter_design_database_45nm}
 # Cell models WITH specify blocks -> required for SDF back-annotated GLS
 export SIM_LIB_TIMING=$LAB_DB/gate_level_simulation/slow_vdd1v0_basicCells.v
 # Cell models WITHOUT timing (Conformal-generated) -> for LEC and Modus
