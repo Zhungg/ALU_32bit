@@ -35,16 +35,16 @@ scripts, and the generated netlists and signoff evidence.
 | Item | Result |
 | :--- | :--- |
 | Target clock | 100 MHz (10 ns), functional mode · 20 MHz (50 ns), scan-shift mode |
-| Functional verification | 20 000 random + directed vectors, self-checking, **TEST PASSED** |
+| Functional verification | 20 040 self-checks (known-answer, directed, 20 000 random, async reset), 0 errors, **TEST PASSED** |
 | Code coverage (DUT: `alu_top`, `alu_core`) | **100 %** (521 / 521 covered items, Xcelium `-coverage all`) |
-| Synthesis (Genus, slow corner 0.9 V / 125 °C) | 846 cells, 2302 µm² total cell area |
+| Synthesis (Genus, slow corner 0.9 V / 125 °C) | 846 cells, 2302 µm² total cell area (scan-inserted netlist) |
 | DFT | 100 scan flops, **1 chain**, **0 DFT rule violations** |
 | ATPG (Modus, stuck-at) | **99.96 %** test coverage (**100 %** adjusted), 8134 faults, 109 test sequences |
-| Post-route setup (reg2reg WNS) | **+1.537 ns**, 0 violating paths |
-| Post-route hold (reg2reg WNS) | **+0.029 ns**, 0 violating paths |
+| Post-route setup (reg2reg WNS, func + scan views, slow 0.9 V / 125 °C) | **+1.537 ns**, 0 violating paths |
+| Post-route hold (reg2reg WNS, func + scan views, fast 1.1 V / 0 °C) | **+0.029 ns**, 0 violating paths |
 | DRC (Innovus `verify_drc`, Virtuoso/Assura) | **0 violations** |
 | LVS (Assura) | **Match** — 0 net / device / pin / parameter mismatches |
-| Power (post-route, functional view, default activity) | ≈ 0.076 mW @ 0.9 V |
+| Power (post-route, `FUNC_SETUP_VIEW`, 0.2 toggle activity, 10 ns clock) | ≈ 0.076 mW @ 0.9 V |
 
 The numbers above are quoted from the reports produced by the flow, kept in the repo:
 

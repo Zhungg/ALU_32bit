@@ -9,7 +9,7 @@ source ../flow_config.sh
 NRAND=${NRAND:-20000}
 SEED=${SEED:-1}
 
-xrun -64bit -access +rwc -coverage all -gui -timescale 1ns/1ps \
+xrun -64bit -access +rwc -coverage all -covoverwrite -gui -timescale 1ns/1ps \
      $PROJ_ROOT/rtl/alu_core.v $PROJ_ROOT/rtl/alu_top.v $PROJ_ROOT/tb/tb_alu_top.v \
      -top tb_alu_top \
      +NRAND=$NRAND +SEED=$SEED \

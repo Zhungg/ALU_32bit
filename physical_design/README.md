@@ -43,9 +43,9 @@ Host paths were replaced by `<PROJ_ROOT>` / `<HOME>`.
 | DRC | `innovus_drc.rpt` | No DRC violations found |
 | Connectivity | `connectivity.rpt` | Found no problems or warnings |
 | Antenna | `alu_top_process_antenna.rpt` | No violations (per-net detail trimmed) |
-| Setup (post-route) | `timing_setup_summary.rpt` | reg2reg WNS +1.537 ns, 0 violating paths |
-| Hold (post-route) | `timing_hold_summary.rpt` | reg2reg WNS +0.029 ns, 0 violating paths |
-| Power | `alu_top_postRoute_power_func.rpt` | ≈ 0.076 mW (functional view) |
+| Setup (post-route) | `timing_setup_summary.rpt` | reg2reg WNS +1.537 ns (func + scan views, slow corner), 0 violating paths |
+| Hold (post-route) | `timing_hold_summary.rpt` | reg2reg WNS +0.029 ns (func + scan views, fast corner), 0 violating paths |
+| Power | `alu_top_postRoute_power_func.rpt` | ≈ 0.076 mW (`FUNC_SETUP_VIEW`, 0.2 toggle activity) |
 
 LVS was run in Assura against the PG netlist; see `img/check_lvs.png`.
 
