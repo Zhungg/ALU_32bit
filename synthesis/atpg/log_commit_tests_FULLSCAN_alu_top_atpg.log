@@ -1,0 +1,122 @@
+Starting Command: commit_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            commit_tests -inexperiment alu_top_atpg -testmode FULLSCAN -workdir <PROJ_ROOT>/synthesis/dft_run/test_scripts -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 20.10-p006_1, built Aug 20 2020 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: <PROJ_ROOT>/synthesis/dft_run/test_scripts/testresults/logs/log_commit_tests_FULLSCAN_alu_top_atpg_102726215439-565234000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Oct 27 21:54:39 2026  CST
+            Host machine is <host>, x86_64 running Linux 3.10.0-957.el7.x86_64.
+            This job is process number 22384.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR <PROJ_ROOT>/synthesis/dft_run/test_scripts
+            -TESTMODE FULLSCAN
+
+            -INEXPERIMENT alu_top_atpg
+            -LOGFILE <PROJ_ROOT>/synthesis/dft_run/test_scripts/testresults/logs/log_commit_tests_FULLSCAN_alu_top_atpg_102726215439-565234000
+            -STDOUT summary
+[end TDA_009]
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+
+INFO (TBD-806): Input test vector File(s) (bytes, name):  [end TBD_806] 
+         182019 <PROJ_ROOT>/synthesis/dft_run/test_scripts/tbdata/TBDbin.FULLSCAN.alu_top_atpg
+
+INFO (TBD-807): Experiment alu_top_atpg odometers prior to commit_tests: 1.1.1.2.1 thru 1.2.1.10.1 (Relative test numbers 1 thru 109).  [end TBD_807] 
+
+Testmode and Global statistics prior to commit_tests
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00         8134            0            0            0         8134         8134            0            0            0         8134
+Collapsed Static     0.00   0.00         5350            0            0            0         5350         5350            0            0            0         5350
+PI Static            0.00   0.00          144            0            0            0          144          144            0            0            0          144
+PO Static            0.00   0.00           66            0            0            0           66           66            0            0            0           66
+
+Total Dynamic                               0
+
+Parametric        
+
+IDDq                 0.00   0.00         8134            0                                   8134         8134            0                                   8134
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+
+Testmode and Global statistics after commit_tests
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static       100.00 100.00         8134         8131            0            3            0         8134         8131            0            3            0
+Collapsed Static   100.00 100.00         5350         5347            0            3            0         5350         5347            0            3            0
+PI Static          100.00 100.00          144          144            0            0            0          144          144            0            0            0
+PO Static          100.00 100.00           66           66            0            0            0           66           66            0            0            0
+
+Total Dynamic                               0
+
+Parametric        
+
+IDDq                 0.00   0.00         8134            0                                   8134         8134            0                                   8134
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TBD-810): Experiment alu_top_atpg is saved to the master test vectors odometers: 1.1.1.2.1 to 1.2.1.10.1 (Relative test numbers 1 to 109).  [end TBD_810] 
+
+INFO (TBD-809): Master test vector file statistics:  [end TBD_809]   
+  experiments     = 1
+  test sections   = 2
+  tester loops    = 2
+  test procedures = 12
+  test sequence   = 109
+  init sequencess = 2
+
+INFO (TBD-805): File(s) generated (bytes and name):  [end TBD_805] 
+         182019 <PROJ_ROOT>/synthesis/dft_run/test_scripts/tbdata/TBDbin.FULLSCAN 
+         139264 <PROJ_ROOT>/synthesis/dft_run/test_scripts/tbdata/faultStatus 
+
+INFO (TBD-831): commit_tests completed successfully.  [end TBD_831] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            7,464,000  bytes
+
+                      CPU Time =    0:00:00.02
+                  Elapsed Time =    0:00:00.04                    [end TDA_001]
+
+     Date Ended:  Tuesday Oct 27 21:54:39 2026  CST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TBD-805): File(s) generated (bytes and name):   
+      1 INFO (TBD-806): Input test vector File(s) (bytes, name):   
+      1 INFO (TBD-807): Experiment alu_top_atpg odometers prior to commit_tests: 1.1.1.2.1 thru 1.2.1.10.1 (Relative test numbers 1 thru 109).   
+      1 INFO (TBD-809): Master test vector file statistics:     
+      1 INFO (TBD-810): Experiment alu_top_atpg is saved to the master test vectors odometers: 1.1.1.2.1 to 1.2.1.10.1 (Relative test numbers 1 to 109).   
+      1 INFO (TBD-831): commit_tests completed successfully.   
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

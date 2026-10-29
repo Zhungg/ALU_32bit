@@ -39,6 +39,7 @@ scripts, and the generated netlists and signoff evidence.
 | Code coverage (DUT: `alu_top`, `alu_core`) | **100 %** (521 / 521 covered items, Xcelium `-coverage all`) |
 | Synthesis (Genus, slow corner 0.9 V / 125 °C) | 846 cells, 2302 µm² total cell area |
 | DFT | 100 scan flops, **1 chain**, **0 DFT rule violations** |
+| ATPG (Modus, stuck-at) | **99.96 %** test coverage (**100 %** adjusted), 8134 faults, 109 test sequences |
 | Post-route setup (reg2reg WNS) | **+1.537 ns**, 0 violating paths |
 | Post-route hold (reg2reg WNS) | **+0.029 ns**, 0 violating paths |
 | DRC (Innovus `verify_drc`, Virtuoso/Assura) | **0 violations** |
@@ -51,6 +52,7 @@ The numbers above are quoted from the reports produced by the flow, kept in the 
 | :--- | :--- |
 | Simulation | [`simulation/xrun_rtl.log`](simulation/xrun_rtl.log) |
 | Synthesis / DFT | [`synthesis/reports/`](synthesis/reports/), [`synthesis/dft_run/reports/`](synthesis/dft_run/reports/) |
+| ATPG | [`synthesis/atpg/`](synthesis/atpg/) |
 | Equivalence check | [`equivalence_checking/reports/`](equivalence_checking/reports/) |
 | Place & route signoff | [`physical_design/signoff/`](physical_design/signoff/) |
 | Screenshots | [`img/`](img/) |
@@ -150,7 +152,8 @@ Cadence Genus maps the RTL to `gsclib045` (slow corner, 0.9 V / 125 °C).
 
 Full-scan insertion with Genus DFT: all 100 registers are stitched into a single
 chain (`top_chain`) using scan flops (`SDFFRHQX*`), with **0 DFT rule violations**.
-Modus ATPG hand-off scripts are generated under `synthesis/test_scripts/`.
+Modus ATPG (`synthesis/test_scripts/`) reaches **99.96 % test coverage (100 % adjusted)** with
+109 test sequences — see [`synthesis/atpg/`](synthesis/atpg/).
 RTL ↔ scan-netlist equivalence is checked with Conformal LEC
 (`equivalence_checking/`).
 
@@ -185,7 +188,7 @@ Place & route in Innovus, followed by physical verification.
 ├── tb/                      Self-checking testbench (tb_alu_top.v)
 ├── constraints/             SDC: functional, functional+DFT, scan mode
 ├── simulation/              Xcelium run / coverage / clean scripts
-├── synthesis/               Genus synthesis + DFT scripts, ATPG hand-off, netlists, SDF
+├── synthesis/               Genus synthesis + DFT scripts, ATPG scripts/logs, netlists, SDF, reports
 ├── equivalence_checking/    Conformal LEC scripts and reports (RTL vs. scan netlist)
 ├── physical_design/         Innovus scripts + session history, layer maps, netlists, signoff/
 ├── docs/                    Architecture notes

@@ -1,0 +1,149 @@
+Starting Command: create_logic_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_logic_tests -testmode FULLSCAN -experiment alu_top_atpg -workdir <PROJ_ROOT>/synthesis/dft_run/test_scripts -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 20.10-p006_1, built Aug 20 2020 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: <PROJ_ROOT>/synthesis/dft_run/test_scripts/testresults/logs/log_create_logic_tests_FULLSCAN_alu_top_atpg_102726215434-200813000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Oct 27 21:54:34 2026  CST
+            Host machine is <host>, x86_64 running Linux 3.10.0-957.el7.x86_64.
+            This job is process number 22346.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR <PROJ_ROOT>/synthesis/dft_run/test_scripts
+            -TESTMODE FULLSCAN
+            -EXPERIMENT alu_top_atpg
+
+            -LOGFILE <PROJ_ROOT>/synthesis/dft_run/test_scripts/testresults/logs/log_create_logic_tests_FULLSCAN_alu_top_atpg_102726215434-200813000
+            -STDOUT summary
+[end TDA_009]
+
+
+FlexNet Licensing checkout error: No such feature exists.
+Feature:       modus_atpg
+License path:  /etc/iconfig/cds.lic.dat:
+FlexNet Licensing error:-5,357
+For further information, refer to the FlexNet Licensing documentation,
+available at "www.flexerasoftware.com".
+license file(s):  /etc/iconfig/cds.lic.dat
+lm_checkout("modus_atpg", 20.100, 1, 0x3, ..., 0x4000)
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+****************************************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+****************************************************************************************************
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                  8134            0            0            0         8134   0.00   0.00
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                  8134            0            0            0         8134   0.00   0.00
+****************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Scan Test generation                                                   [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1        808     9.93%    9.93%         7326           00:00.31    [end TDA_220] 
+INFO (TTC-110): Ending Scan Test generation                                                     [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Reset/Set Test Generation                                              [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1        101    11.18%   11.18%         7225           00:00.33    [end TDA_220] 
+INFO (TTC-110): Ending Reset/Set Test Generation                                                [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Static Logic Test generation                                           [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):     16      16       4602    67.75%   67.75%         2623           00:00.85    [end TDA_220] 
+INFO (TDA-220):     32      32       1042    80.56%   80.56%         1581           00:00.94    [end TDA_220] 
+INFO (TDA-220):     48      48        751    89.80%   89.80%          830           00:01.01    [end TDA_220] 
+INFO (TDA-220):     64      64        518    96.16%   96.16%          312           00:01.06    [end TDA_220] 
+INFO (TDA-220):     80      80        224    98.92%   98.92%           88           00:01.09    [end TDA_220] 
+INFO (TDA-220):     96      95         43    99.45%   99.45%           45           00:01.10    [end TDA_220] 
+INFO (TDA-220):    107     106         41    99.99%   99.99%            1           00:01.12    [end TDA_220] 
+INFO (TDA-220):    108     107          1    99.99%   99.99%            0           00:01.13    [end TDA_220] 
+INFO (TTC-110): Ending Static Logic Test generation - processing limit reached                  [end TTC_110] 
+*************************************************************************************************************
+
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                  8134         8131            0            3            0  99.96 100.00
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                  8134         8131            0            3            0  99.96 100.00
+****************************************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+ Logic                                          108
+----------------------------------------------------------
+ Total                                          109
+
+(I) File(s) generated (bytes and name):
+
+          73728 <PROJ_ROOT>/synthesis/dft_run/test_scripts/tbdata/faultStatus.FULLSCAN.alu_top_atpg
+         182019 <PROJ_ROOT>/synthesis/dft_run/test_scripts/tbdata/TBDbin.FULLSCAN.alu_top_atpg
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,279,264  bytes
+
+                      CPU Time =    0:00:00.83
+                  Elapsed Time =    0:00:01.15                    [end TDA_001]
+
+     Date Ended:  Tuesday Oct 27 21:54:35 2026  CST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+     16 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+      6 INFO (TTC-110): Starting Scan Test generation                                                    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

@@ -13,6 +13,8 @@ All notable changes are documented here. Format based on
 - `equivalence_checking/run_lec.sh` wrapper for Conformal LEC.
 
 ### Changed
+- Added Modus ATPG results (`synthesis/atpg/`: logs + summary) and quoted them in the README.
+- Redacted the remaining host ID in the two post-route netlist headers.
 - Curated reports are now tracked: `synthesis/reports/`, `synthesis/dft_run/reports/`,
   `equivalence_checking/reports/`, `simulation/xrun_rtl.log`, `physical_design/signoff/`
   (host paths redacted). Added `physical_design/README.md` and the recorded

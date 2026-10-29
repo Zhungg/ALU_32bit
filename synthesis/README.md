@@ -31,5 +31,6 @@ If the preflight reports that `SDFFRHQX1` is missing from the slow Liberty,
 functional Verilog model or LEF, stop and identify the matching scan-cell model
 before continuing; do not bypass site license messages.
 
-`write_dft_atpg` only generates the hand-off files; running Modus ATPG is a
-separate step.
+`write_dft_atpg` generates the hand-off files; Modus ATPG is then run separately
+(`test_scripts/runmodus.atpg.tcl`). Results: [`atpg/`](atpg/README.md) — 99.96 % test
+coverage, 100 % adjusted.
