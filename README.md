@@ -50,7 +50,6 @@ The numbers above are quoted from the reports produced by the flow, kept in the 
 
 | Stage | Evidence |
 | :--- | :--- |
-| Simulation | [`simulation/xrun_rtl.log`](simulation/xrun_rtl.log) |
 | Synthesis / DFT | [`synthesis/reports/`](synthesis/reports/), [`synthesis/dft_run/reports/`](synthesis/dft_run/reports/) |
 | ATPG | [`synthesis/atpg/`](synthesis/atpg/) |
 | Equivalence check | [`equivalence_checking/reports/`](equivalence_checking/reports/) |

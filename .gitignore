@@ -12,7 +12,6 @@ simulation/waves.shm/
 simulation/cov_work/
 simulation/html_*/
 simulation/*.log
-!simulation/xrun_rtl.log
 simulation/*.history
 simulation/flex*.log
 simulation/exit
