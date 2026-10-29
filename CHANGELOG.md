@@ -13,6 +13,13 @@ All notable changes are documented here. Format based on
 - `equivalence_checking/run_lec.sh` wrapper for Conformal LEC.
 
 ### Changed
+- Curated reports are now tracked: `synthesis/reports/`, `synthesis/dft_run/reports/`,
+  `equivalence_checking/reports/`, `simulation/xrun_rtl.log`, `physical_design/signoff/`
+  (host paths redacted). Added `physical_design/README.md` and the recorded
+  `innovus_session_history.tcl`.
+- Removed duplicate DFT netlist/SDF/SCANDEF/SDC from `synthesis/outputs/`
+  (canonical copy: `synthesis/dft_run/outputs/`).
+- `.gitignore`: also block `*.gds`, `*.gds.gz`, `*.oas` (embed PDK cell geometry).
 - README rewritten: corrected operation encoding, ports and PDK badge; added a
   results table taken from the signoff reports.
 - `flow_config.sh` paths can be overridden from the environment.

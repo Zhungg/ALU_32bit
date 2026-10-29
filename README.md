@@ -45,9 +45,17 @@ scripts, and the generated netlists and signoff evidence.
 | LVS (Assura) | **Match** — 0 net / device / pin / parameter mismatches |
 | Power (post-route, functional view, default activity) | ≈ 0.076 mW @ 0.9 V |
 
-The numbers above are quoted from the signoff reports produced by the flow
-(`synthesis/reports/`, `physical_design/reports/`) and the screenshots in [`img/`](img/).
-The bulky raw reports are git-ignored; regenerate them with the scripts below.
+The numbers above are quoted from the reports produced by the flow, kept in the repo:
+
+| Stage | Evidence |
+| :--- | :--- |
+| Simulation | [`simulation/xrun_rtl.log`](simulation/xrun_rtl.log) |
+| Synthesis / DFT | [`synthesis/reports/`](synthesis/reports/), [`synthesis/dft_run/reports/`](synthesis/dft_run/reports/) |
+| Equivalence check | [`equivalence_checking/reports/`](equivalence_checking/reports/) |
+| Place & route signoff | [`physical_design/signoff/`](physical_design/signoff/) |
+| Screenshots | [`img/`](img/) |
+
+The bulky raw Innovus/Voltus reports, databases and GDS are git-ignored; regenerate them with the scripts below.
 
 ---
 
@@ -178,8 +186,8 @@ Place & route in Innovus, followed by physical verification.
 ├── constraints/             SDC: functional, functional+DFT, scan mode
 ├── simulation/              Xcelium run / coverage / clean scripts
 ├── synthesis/               Genus synthesis + DFT scripts, ATPG hand-off, netlists, SDF
-├── equivalence_checking/    Conformal LEC scripts (RTL vs. scan netlist)
-├── physical_design/         Innovus scripts, layer maps, post-route netlists
+├── equivalence_checking/    Conformal LEC scripts and reports (RTL vs. scan netlist)
+├── physical_design/         Innovus scripts + session history, layer maps, netlists, signoff/
 ├── docs/                    Architecture notes
 ├── img/                     Flow screenshots used in this README
 ├── flow_config.sh           Single source of truth for tool and PDK paths
@@ -227,11 +235,14 @@ cd synthesis && ./run_synth.sh && ./run_synth_dft.sh && cd ..
 # 4. Equivalence check: RTL vs. scan-inserted netlist
 ./equivalence_checking/run_lec.sh
 
-# 5. Place & route, CTS, signoff (Innovus Common UI)
+# 5. Place & route, CTS, signoff (Innovus Common UI): import, then follow the stages
+#    recorded in scripts/innovus_session_history.tcl
 cd physical_design && innovus -files scripts/import.tcl
 ```
 
-Stage-specific notes: [synthesis/README.md](synthesis/README.md).
+Stage-specific notes: [synthesis/README.md](synthesis/README.md),
+[physical_design/README.md](physical_design/README.md) (the layout was built interactively;
+the full recorded Innovus session is in `physical_design/scripts/innovus_session_history.tcl`).
 
 ---
 
