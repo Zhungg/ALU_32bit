@@ -1,0 +1,70 @@
+xrun(64): 20.09-s009: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s009: Started on Oct 29, 2026 at 10:04:10 CST
+xrun
+	-64bit
+	-access +rwc
+	-coverage all
+	-gui
+	-timescale 1ns/1ps
+	<PROJ_ROOT>/rtl/alu_core.v
+	<PROJ_ROOT>/rtl/alu_top.v
+	<PROJ_ROOT>/tb/tb_alu_top.v
+	-top tb_alu_top
+	+NRAND=20000
+	+SEED=1
+	-l xrun_rtl.log
+
+   User defined plus("+") options:
+	+NRAND=20000
+	+SEED=1
+
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /opt/rh/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_alu_top.a tb_alu_top.a1 tb_alu_top.a2 tb_alu_top.alu_ctrl tb_alu_top.b tb_alu_top.b1 tb_alu_top.b2 tb_alu_top.clk tb_alu_top.d_a tb_alu_top.d_b tb_alu_top.d_exp tb_alu_top.d_op tb_alu_top.exp1 tb_alu_top.exp2 tb_alu_top.i tb_alu_top.k tb_alu_top.legal_ops tb_alu_top.n_checks tb_alu_top.n_dir tb_alu_top.n_err tb_alu_top.n_kat_err tb_alu_top.n_rand tb_alu_top.n_rst_err tb_alu_top.op1 tb_alu_top.op2 tb_alu_top.op_cnt tb_alu_top.r tb_alu_top.result tb_alu_top.rst_n tb_alu_top.seed tb_alu_top.v1 tb_alu_top.v2
+Created probe 1
+xcelium> run
+xmsim: *E,C58EXE: Coverage database file already exists in the test output directory './cov_work/scope/test', and will not be overwritten. Specify a different name for the test output directory or use the '-covoverwrite' option to overwrite the existing test output directory, and rerun the simulation.
+[TB] NRAND=20000 SEED=1
+[TB] KAT: 38 vectors, 0 model errors
+[100430000] [TB] async reset test done
+--------------------------------------------------------
+ alu_top self-checking testbench summary
+--------------------------------------------------------
+   ADD  (0000) : 1951 checks
+   SLL  (0001) : 1985 checks
+   SLT  (0010) : 1962 checks
+   SLTU (0011) : 1869 checks
+   XOR  (0100) : 1868 checks
+   SRL  (0101) : 1866 checks
+   OR   (0110) : 1915 checks
+   AND  (0111) : 1829 checks
+   SUB  (1000) : 1960 checks
+   ILLG (1001) : 154 checks
+   ILLG (1010) : 155 checks
+   ILLG (1011) : 168 checks
+   ILLG (1100) : 166 checks
+   SRA  (1101) : 1879 checks
+   ILLG (1110) : 164 checks
+   ILLG (1111) : 149 checks
+   total checks : 20040
+   data errors  : 0
+   reset errors : 0
+   KAT errors   : 0
+*** TEST PASSED ***
+--------------------------------------------------------
+Simulation complete via $finish(1) at time 200460 NS + 0
+../tb/tb_alu_top.v:402         $finish;
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+xmsim: *F,C58EXS: Coverage database file already exists in the test output directory './cov_work/scope/test', and will not be overwritten. Specify a different name for the test output directory or use the '-covoverwrite' option to overwrite the existing test output directory, and rerun the simulation.
+TOOL:	xrun(64)	20.09-s009: Exiting on Oct 29, 2026 at 10:05:09 CST  (total: 00:00:59)

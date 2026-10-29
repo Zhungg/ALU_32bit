@@ -12,6 +12,7 @@ simulation/waves.shm/
 simulation/cov_work/
 simulation/html_*/
 simulation/*.log
+!simulation/xrun_rtl.log
 simulation/*.history
 simulation/flex*.log
 simulation/exit
@@ -21,27 +22,32 @@ simulation/xrun.key
 
 # Synthesis outputs, reports, logs & stamps
 synthesis/logs/
-synthesis/reports/
+# (synthesis/reports and dft_run/reports are tracked; DFT copies in synthesis/reports
+#  duplicate synthesis/dft_run/reports, which is the canonical DFT run)
+synthesis/reports/post_dft_*
+synthesis/reports/dft_rules_*
+synthesis/reports/scan_chains.rpt
 synthesis/fv/
 synthesis/dft_run/MODUS/
 synthesis/dft_run/fv/
 synthesis/dft_run/logs/
-synthesis/dft_run/reports/
 synthesis/**/.rs_*.tstamp
 
 # Physical design work, databases, & heavy packages
 physical_design/logs/
 physical_design/work/
+# raw Innovus/Voltus reports are huge (~220 MB); curated summaries live in physical_design/signoff/
 physical_design/reports/
 physical_design/results/alu32_drc_lvs_package/
 physical_design/results/*_final_db/
 physical_design/results/*.inn/
 physical_design/results/*.tar.gz
 physical_design/results/*.gds
+*.gds
+*.gds.gz
+*.oas
 work/
 
-# Equivalence checking reports
-equivalence_checking/reports/
 
 # OS and Temp files
 *.swp

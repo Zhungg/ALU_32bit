@@ -1,0 +1,135 @@
+                          CONFORMAL (R)
+                   Version 19.10-p100 (03-May-2019) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2733 days old. You can download the latest version from http://downloads.cadence.com.
+
+CPU time     : 0.45    seconds
+Elapse time  : 0       seconds
+Memory usage : 309.29  M bytes
+// Command: read library <LAB_DB>/lib/slow_vdd1v0_basiccells.v -verilog -both
+// Parsing file <LAB_DB>/lib/slow_vdd1v0_basiccells.v ...
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:56)
+// Warning: (VLG5.5) Internal primitive is recognized (occurrence:120)
+// Warning: (VLG5.6) Named port association is ignored for primitive gate (occurrence:120)
+// Warning: (IGN7.1) trireg net is modeled as a latch to hold value (occurrence:1)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:80)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+CPU time     : 0.82    seconds
+Elapse time  : 0       seconds
+Memory usage : 331.16  M bytes
+// Command: read design ../rtl/alu_core.v ../rtl/alu_top.v -verilog -golden
+// Parsing file ../rtl/alu_core.v ...
+// Parsing file ../rtl/alu_top.v ...
+// Golden root module is set to 'alu_top'
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:2)
+// Note: Read VERILOG design successfully
+// Command: read design ../synthesis/dft_run/outputs/alu_top_syn_dft.v -verilog -revised
+// Parsing file ../synthesis/dft_run/outputs/alu_top_syn_dft.v ...
+// Revised root module is set to 'alu_top'
+// Note: Read VERILOG design successfully
+CPU time     : 1.05    seconds
+Elapse time  : 1       seconds
+Memory usage : 344.20  M bytes
+// Command: add pin constraints 0 SE -revised
+// Command: add ignored inputs scan_in -revised
+// Command: add ignored outputs scan_out -revised
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+CPU time     : 1.29    seconds
+Elapse time  : 1       seconds
+Memory usage : 369.42  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 202
+// Revised key points = 203
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            70     32     100       202     
+--------------------------------------------------------------------------------
+Revised           70     32     100       202     
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Extra             1         1       
+================================================================================
+// Command: add compared points -all
+// 132 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           32     100       132     
+================================================================================
+CPU time     : 1.90    seconds
+Elapse time  : 1       seconds
+Memory usage : 376.42  M bytes
+// Command: report unmapped points -extra
+Unmapped point (extra):
+  (R)   71   PI   /scan_in
+
+1 unmapped points reported
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   PI        Total   
+--------------------------------------------------------------------------------
+Extra             1         1       
+================================================================================
+// Command: report statistics
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          alu_top           alu_top           
+
+Primary inputs                                70                 71
+   Mapped                                     70                 70
+      Extra                                    0                  1
+
+Primary outputs                               32                 32
+   Mapped                                     32                 32
+      Equivalent                 32
+
+State key points                             100                100
+   Mapped                                    100                100
+      Equivalent                100
+================================================================================
+// Command: report verification
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 1
+     Command "add ignore outputs" used:                        yes
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+================================================================================
+// Command: exit -force
