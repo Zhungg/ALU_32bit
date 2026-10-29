@@ -1,0 +1,64 @@
+# ALU32 MMMC configuration for gsclib045 / gpdk045
+# Requires flow_config.sh to be sourced before launching Innovus.
+
+if {![info exists ::env(PROJ_ROOT)]} {
+    error "PROJ_ROOT is not set. Source flow_config.sh before launching Innovus."
+}
+
+set root $::env(PROJ_ROOT)
+
+# Timing libraries
+create_library_set -name LIB_SLOW \
+    -timing [list $::env(LIB_SLOW)]
+
+create_library_set -name LIB_FAST \
+    -timing [list $::env(LIB_FAST)]
+
+# RC extraction corners
+create_rc_corner -name RC_WORST \
+    -qx_tech_file $::env(QRC_RCWORST)
+
+create_rc_corner -name RC_BEST \
+    -qx_tech_file $::env(QRC_RCBEST)
+
+# Delay corners
+create_delay_corner -name DC_SLOW_WORST \
+    -library_set LIB_SLOW \
+    -rc_corner RC_WORST
+
+create_delay_corner -name DC_FAST_BEST \
+    -library_set LIB_FAST \
+    -rc_corner RC_BEST
+
+# Functional mode: the scan enable is constrained to 0
+create_constraint_mode -name FUNC_MODE \
+    -sdc_files [list \
+        [file join $root constraints alu_top_func.sdc] \
+        [file join $root constraints alu_top_func_dft.sdc]]
+
+# Scan-shift mode: the scan enable is constrained to 1
+create_constraint_mode -name SCAN_MODE \
+    -sdc_files [list \
+        [file join $root constraints alu_top_scan.sdc]]
+
+# Four analysis views
+create_analysis_view -name FUNC_SETUP_VIEW \
+    -constraint_mode FUNC_MODE \
+    -delay_corner DC_SLOW_WORST
+
+create_analysis_view -name FUNC_HOLD_VIEW \
+    -constraint_mode FUNC_MODE \
+    -delay_corner DC_FAST_BEST
+
+create_analysis_view -name SCAN_SETUP_VIEW \
+    -constraint_mode SCAN_MODE \
+    -delay_corner DC_SLOW_WORST
+
+create_analysis_view -name SCAN_HOLD_VIEW \
+    -constraint_mode SCAN_MODE \
+    -delay_corner DC_FAST_BEST
+
+# Activate setup and hold views
+set_analysis_view \
+    -setup [list FUNC_SETUP_VIEW SCAN_SETUP_VIEW] \
+    -hold  [list FUNC_HOLD_VIEW SCAN_HOLD_VIEW]
