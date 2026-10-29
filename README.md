@@ -220,9 +220,8 @@ A successful run ends with `*** TEST PASSED ***`. The same check runs in
 
 ### B. Full Cadence flow
 
-Prerequisites: Cadence Xcelium, IMC, Genus, Modus, Conformal LEC, Innovus (versions
-used: Genus 20.10, Innovus 20.10, Xcelium 20.09), the GPDK045 / gsclib045 PDK, and a
-Linux host.
+Prerequisites: Cadence Xcelium, IMC, Genus, Modus, Conformal LEC, Innovus, the
+GPDK045 / gsclib045 PDK, and a Linux host.
 
 ```bash
 # 1. Configure tool / PDK paths (override any variable in the environment)
